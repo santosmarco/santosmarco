@@ -9,26 +9,28 @@ const app = express();
 app.use(cors({ origin: true }));
 
 // GET routes
-app.get("/projects", async (_, res) =>
-  res.json(await fsProjects.getAllProjects())
-);
-app.get("/projects/:id", async (req, res) =>
-  res.json(await fsProjects.getProject(req.params.id))
-);
+app.get("/projects", (_, res) => {
+  fsProjects.getAllProjects().then((data) => res.json(data));
+});
+app.get("/projects/:id", (req, res) => {
+  fsProjects.getProject(req.params.id).then((data) => res.json(data));
+});
 
 // POST routes
-app.post("/projects", async (req, res) =>
-  res.json(await fsProjects.addProject(req.body))
-);
+app.post("/projects", (req, res) => {
+  fsProjects.addProject(req.body).then((data) => res.json(data));
+});
 
 // PATCH routes
-app.patch("/projects/:id", async (req, res) =>
-  res.json(await fsProjects.updateProject(req.params.id, req.body))
-);
+app.patch("/projects/:id", (req, res) => {
+  fsProjects
+    .updateProject(req.params.id, req.body)
+    .then((data) => res.json(data));
+});
 
 // DELETE routes
-app.delete("/projects/:id", async (req, res) =>
-  res.json(await fsProjects.deleteProject(req.params.id))
-);
+app.delete("/projects/:id", (req, res) => {
+  fsProjects.deleteProject(req.params.id).then((data) => res.json(data));
+});
 
 export const api = functions.https.onRequest(app);
