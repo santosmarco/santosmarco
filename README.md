@@ -1,1 +1,1 @@
-[![Marco Santos' GitHub stats](https://github-readme-stats.vercel.app/api?username=santosmarco?show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=dracula)](https://github.com/santosmarco/github-readme-stats)
+[![Marco Santos' GitHub stats](https://github-readme-stats.vercel.app/api?username=santosmarco&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage&show_icons=true&theme=dracula)](https://github.com/santosmarco/github-readme-stats)
